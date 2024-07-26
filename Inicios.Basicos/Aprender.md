@@ -1,5 +1,3 @@
-Claro, aquí tienes tu archivo `.md` organizado y formateado correctamente para que se vea bien en el repositorio de GitHub:
-
 ```markdown
 # Datos en JavaScript
 

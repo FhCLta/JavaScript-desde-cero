@@ -312,11 +312,45 @@ colores1.forEach(function(el, index) { // .forEach recorre todos los elementos d
   };
   console.log(persona);
 
-  const Florencio = {
-    nombre: "Florencio",
-    apellido: "Hurtado",
-    edad: 28
-  };
-  console.log(Florencio);
+/* Dentro de un objeto a las variables se le van a llamar atributos/propiedades
+y a las funciones se le llaman metodos. */
 
+
+  const Florencio = {
+  nombre: "Florencio",
+  apellido: "Hurtado",
+  edad: 28,
+  pasatiempos: ["Programar", "escribir", "leer"],
+  casado: true,
+  contacto: {
+    email: "Hgk6c@example.com",
+    twitter: "@florenciohurtado",
+    movil: "123456789",
+  },
+  saludar: function() {
+    console.log("Hola, mi nombre es Florencio Hurtado");
+  },
+  decirMiNombre: function() {
+    console.log(`Mi nombre es ${this.nombre} ${this.apellido}
+    y tengo ${this.edad} años`); // this hace referencia al objeto
+  }
+};
+
+console.log(Florencio);
+
+console.log(Florencio["nombre"]); // accede solo al nombre
+console.log(Florencio.edad); // accede solo a la edad este metodo es mas recomendado 
+console.log(Florencio.pasatiempos);
+console.log(Florencio.pasatiempos[2]); // me impirme el tercer valor del arry pasatiempos
+console.log(Florencio.casado); // me imprime el valor de la variable casado en este caso es true
+
+console.log(Florencio.contacto); // me imprime todo el objeto
+console.log(Florencio.contacto.twitter); // me imprime solo el twitter dentro del objeto contacto
+console.log(Florencio.contacto.movil); // me imprime solo el movil dentro del objeto contacto
+Florencio.saludar(); // Esto llamará al método saludar y mostrará el mensaje en la consola
+Florencio.decirMiNombre(); // Esto llamará al método decirMiNombre y mostrará el mensaje en la consola
+
+console.log(Object.keys(Florencio)); // me imprime las llaves {} del objeto
+console.log(Object.values(Florencio)); // me imprime los valores del objeto
+console.log(Florencio.hasOwnProperty("contacto")); // me imprime true si el objeto tiene la llave contacto esta dentro de las llaves del objeto
  
