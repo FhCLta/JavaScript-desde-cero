@@ -174,7 +174,121 @@ let noEsUnNumero = "hola" *3.7;
 console.log(noEsUnNumero); // NaN
 
    
+//* Datos compuestos*//
+
     //------------ //
    // *Funciones* // 
   //-------------//
+
+  /* 
+  Una funcion es un bloque de código autocontenido, que se puede definir una vez y ejecutar
+  en cualquier momento.
   
+  Opcionalmente, una puede aceptar parámetros y retornar un valor.
+  
+  Las fuunciones en javascript son objetos, un tipo especial de objetos:
+  
+  Se dice que las funciones son ciudadanos de primera clase porque pueden asignarse a un valor, y pueden
+  pasarse cómo argumentos y usarse cómo un valor de retorno
+*/
+
+ // tenermos dos maneras de declarar una funcion funciones declarativas y expresiones
+
+ // Funciones declarativas
+ function estoEsUnaFuncion()
+ {
+   console.log("uno");
+   console.log("dos");
+   console.log("tres");
+ };
+ 
+ // Para que la función se ejecute es necesario llamarla
+ estoEsUnaFuncion();
+
+ function unaFuncionQueDevuelveUnValor()
+ {
+   return "Hola mundo";  // return me permite devolver un valor
+ }
+ console.log(unaFuncionQueDevuelveUnValor()); // se ejecuta dentro del console.log
+
+ let valor = unaFuncionQueDevuelveUnValor();      // se ejecuta la funcion llamandola cómo variable
+ console.log("El valor de la variable es", valor);
+
+ // cuando el compilador encuentra el return ignora el restos del código y termina la ejecución de la función
+
+ function saludar(nombre,edad) // nombre y edad son los argumentos que recibe la funcion
+ {
+   console.log(`Hola mi nombre es ${nombre}, y tengo  ${edad} años.`);
+ }
+
+ saludar("Florencio",28); // se envian los argumentos
+ saludar(); // no se envian argumentos y devuelve un undefined
+
+ function saludar1(nombre = "Default",edad = 0) // nombre y edad son los argumentos que recibe la funcion
+ {
+   console.log(`Hola mi nombre es ${nombre}, y tengo  ${edad} años.`);
+ }
+
+ saludar1(); // se envian los argumentos que definimos por defecto en la funcion
+
+ // funciones declaradas vs funciones expresadas
+ //*Funciones declaradas*//
+
+ function funcionDeclarada()
+ {
+    console.log(`Esto es una funcion declarada, puede invocarse en cualquier 
+    parte de nuestro programa, incluso antes de que la funcion sea declarada 
+    o ejecutada.parte de nuestro programa `); 
+ }
+
+ // si invoco a la funcion antes del bloque de codigo y despues se ejecuta la funcion dos veces.
+// Esto sucede cons las funciones declaradas
+
+ funcionDeclarada(); 
+
+ //*Funciones expresadas*//
+// Funcion anonima
+
+ // funcionExpresada(); // si la invocamos antes del bloque de codigo no se ejecuta la funcion, me da error
+
+ const funcionExpresada = function() // la funcion expresada se le asigna a una variable
+ {
+    console.log(`Esto es una funcion expresada, es decir, una funcion que se le ha
+    asignado cómo valor a una variable, si invocamos esta función antes de su definición
+    JS nos dirá...... `); 
+ }
+
+ funcionExpresada();
+
+ 
+    //-------------//
+   //  *Arrays*   // 
+  //-------------//
+
+  const ab = []; // ab es un array vacio
+  const cd = [1,2,3,4,5,6,7,8,9,10]; // cd es un array con valores numericos
+  const ed = [1, true, "hola",[1,2,3]]; // ed es un array con valores compuestos, // la consola me muestra el # de ekementos del array
+
+  console.log(ab,cd,ed); // la consola me muestra el # de ekementos del array
+  console.log(ed[2]); // los arreglos empiezan a contabilizar en 0, en este caso imprime hola que es el tercer elemento
+  console.log(ed[3][0]); // imprime el primer elemento del segundo array despues del 3 elemento del 1er array
+
+// otra manera de declarar un array
+
+const ce = Array.of("x", "y", "z", 1,2,3); //aqui estaba accediendiendo a prototipo array de javascript
+console.log(ce);
+
+const vb = Array(10).fill(0); // crea un array de 10 elementos con valor 0
+console.log(vb);
+
+// los arreglos tienen metodos
+
+const colores1 = ["rojo", "azul", "verde"];
+console.log(colores1);
+
+colores1.push("amarillo"); // .push agrega un elemento al final
+console.log(colores1);
+
+colores1.pop(); // .pop elimina el elemento al final
+console.log(colores1);
+ 
