@@ -6,14 +6,14 @@
 -undefined,
 -Nan
 
-*Datos Compuestos*: se accede a la referencia del valor.
+*Datos Compuestos*: se accede a la referencia del valor
 -oject = {},
 -array = [],
 -function = (),
 -Class {},
 
-
-// Metodo forEach
+ 
+ //*Metodo forEach*//
 
 En JavaScript, cuando utilizas el método forEach de un array, la función de callback que pasas recibe automáticamente los argumentos en un orden específico, definido por el lenguaje. Este orden es:
 
@@ -33,9 +33,9 @@ La función de callback que pasas a forEach recibe tres parámetros en el siguie
 
 
 
-//-----------------------------------------------------------------//
+
+
 //* Diferencia entre el uso de const y let para declarar objetos *//
-//---------------------------------------------------------------//
 
 
 En JavaScript, `const` y `let` son dos maneras de declarar variables, pero tienen diferencias importantes en cuanto a su comportamiento, especialmente cuando se trata de objetos.
