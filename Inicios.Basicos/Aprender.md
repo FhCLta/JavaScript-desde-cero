@@ -1,42 +1,49 @@
-*Datos Primitivos* : se accede directamente al valor
-- string,
--number,
--boolean,
--null,
--undefined,
--Nan
+Claro, aquí tienes tu archivo `.md` organizado y formateado correctamente para que se vea bien en el repositorio de GitHub:
 
-*Datos Compuestos*: se accede a la referencia del valor
--oject = {},
--array = [],
--function = (),
--Class {},
+```markdown
+# Datos en JavaScript
 
- 
- //*Metodo forEach*//
+## Datos Primitivos
 
-En JavaScript, cuando utilizas el método forEach de un array, la función de callback que pasas recibe automáticamente los argumentos en un orden específico, definido por el lenguaje. Este orden es:
+Se accede directamente al valor:
+- `string`
+- `number`
+- `boolean`
+- `null`
+- `undefined`
+- `NaN`
 
-1-El valor del elemento actual.
-2-El índice del elemento actual.
-3-El array completo que está siendo recorrido (opcional y menos usado).
+## Datos Compuestos
+
+Se accede a la referencia del valor:
+- `object = {}`
+- `array = []`
+- `function = ()`
+- `class = {}`
+
+---
+
+## Método `forEach`
+
+En JavaScript, cuando utilizas el método `forEach` de un array, la función de callback que pasas recibe automáticamente los argumentos en un orden específico, definido por el lenguaje. Este orden es:
+
+1. El valor del elemento actual.
+2. El índice del elemento actual.
+3. El array completo que está siendo recorrido (opcional y menos usado).
+
 Por lo tanto, no importa cómo nombres estos parámetros, siempre recibirán los valores en este orden.
 
-Aquí hay una explicación detallada:
+### Orden de los Parámetros en `forEach`
 
-Orden de los Parámetros en forEach
-La función de callback que pasas a forEach recibe tres parámetros en el siguiente orden:
+La función de callback que pasas a `forEach` recibe tres parámetros en el siguiente orden:
 
-1-El Valor del Elemento Actual: El valor del elemento que está siendo procesado en el array.
-2-El Índice del Elemento Actual: El índice (posición) del elemento actual en el array.
-3-El Array Completo: El array completo sobre el cual se está llamando forEach.
+1. **El Valor del Elemento Actual**: El valor del elemento que está siendo procesado en el array.
+2. **El Índice del Elemento Actual**: El índice (posición) del elemento actual en el array.
+3. **El Array Completo**: El array completo sobre el cual se está llamando `forEach`.
 
+---
 
-
-
-
-//* Diferencia entre el uso de const y let para declarar objetos *//
-
+## Diferencia entre el uso de `const` y `let` para declarar objetos
 
 En JavaScript, `const` y `let` son dos maneras de declarar variables, pero tienen diferencias importantes en cuanto a su comportamiento, especialmente cuando se trata de objetos.
 
@@ -133,4 +140,8 @@ persona = {
 console.log(persona); // { nombre: 'Pedro', edad: 25 }
 ```
 
-En resumen, la elección entre `const` y `let` depende de si necesitas que la referencia a la variable pueda cambiar o no.
+En resumen, la elección entre `const` y `let` depende de si necesitas que 
+la referencia a la variable pueda cambiar o no.
+```
+
+
