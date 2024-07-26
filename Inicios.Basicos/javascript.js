@@ -291,4 +291,32 @@ console.log(colores1);
 
 colores1.pop(); // .pop elimina el elemento al final
 console.log(colores1);
+
+
+// los elemnetos que defino en la funcion empiezan por los valores del arreglo y luego por el indice//
+
+colores1.forEach(function(el, index) { // .forEach recorre todos los elementos del array e index es el indice del array
+  console.log(`<li id="${index}">${el} </li>`); // el es el elemento y el index es el indice y así sabemos la posicion que tiene el elemento 
+});
+
+
+    //-------------//
+   //  *Objetos*  // 
+  //-------------//
+
+  // un objeto puede tener entre llaves cualquier tipo de datos incluso una función
+
+  const persona = {
+    nombre: "Yahily",
+    edad: 25
+  };
+  console.log(persona);
+
+  const Florencio = {
+    nombre: "Florencio",
+    apellido: "Hurtado",
+    edad: 28
+  };
+  console.log(Florencio);
+
  
