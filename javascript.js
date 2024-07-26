@@ -152,3 +152,29 @@ console.log(saludo2);
     false || true, // true
     false || false, // false
   );
+
+
+    //-------------------------------------- //
+   // *Tipos de datos undefined, null, NaN* // 
+  //---------------------------------------//
+
+  let indefinida; // para javascript es undefined una variable sin valor
+  console.log(indefinida);
+
+// para javascript es null una variable vacia pero intencionalmente se le ha asignado un valor null
+// null es un valor especial que indica la ausencia de un valor
+   
+  let nulo = null; 
+  console.log(nulo);
+
+  // NaN = Not a Number
+ // me indica que no es un numero
+
+let noEsUnNumero = "hola" *3.7;
+console.log(noEsUnNumero); // NaN
+
+   
+    //------------ //
+   // *Funciones* // 
+  //-------------//
+  
