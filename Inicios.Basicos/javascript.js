@@ -354,3 +354,67 @@ console.log(Object.keys(Florencio)); // me imprime las llaves {} del objeto
 console.log(Object.values(Florencio)); // me imprime los valores del objeto
 console.log(Florencio.hasOwnProperty("contacto")); // me imprime true si el objeto tiene la llave contacto esta dentro de las llaves del objeto
  
+
+    //------------------------//
+   //  *Operadores Lógicos*  // 
+  //------------------------//
+
+  //Arithmeticos + - * / %
+
+  let a9 = 10+10-5;
+  let modulo = 10%3; // devuelve el residuo sin contar la parte fraccionaria
+
+  console.log(a9);
+  console.log(modulo);
+
+  // Operadores relacionales > < >= <= == === != !== */
+
+  console.log(8<9); // true
+  console.log(8>9); // false
+  console.log(8>=9); // false
+  console.log(8<=9); // true
+  console.log(8==9); // false
+  console.log(8===9); // false
+  console.log(8!=9); // true
+  console.log(8!==9); // true
+
+  /*
+  = 1 igual es asignacion de variable
+  == 2 igual es comparacion de valores
+  === 3 igual es comparacion de valores y tipo de variable
+  */  
+
+  // Incremento y Decremento
+
+  let i = 1;
+  console.log(i++); // 1
+  console.log(++i); // 3
+
+  //i = i + 2;
+  i += 2; // es igual a i = i + 2, tambié se puede usar -=, *=, /=, %=
+
+// Operador unario
+
+  i++; // es igual a i = i + 1, es mejor usar esta manera.
+  i--; // es igual a i = i - 1
+
+  console.log(i);
+
+  // Operadores Logicos
+  /*
+  !-- NOT : Niega, lo que es verdadero lo convierte en falso y viceversa.
+  
+  &&- AND : Cuando tengo 2 o mas condiciones todas tienen que ser verdaderas 
+            para que el resultado sea verdadero y viceversa si uno es falso devuelve falso.
+  
+            ||- OR  : Cuando tengo 2 o mas condiciones , con que uno sea verdadero y el otro falso devuelve 
+                      verdadero y viceversa.
+  */
+
+  console.log(!false); // true
+  console.log(!true); // false
+  console.log((8===8) || ("8"===8) || ("8"===9)); // true
+  console.log((8===8) && ("8"===8) && ("8"===9)); // false
+
+
+
