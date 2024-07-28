@@ -718,3 +718,50 @@ switch (dia) {
     //------------------------------------------//
    //   *Parametros Rest & Operador  spread*   // 
   //------------------------------------------//
+
+
+   // Parametros Rest
+  function sumar(a,b,...c){  // a partir de ...c puedo obtener una lista de argumentos
+    let resultado = a + b;
+    
+    c.forEach(function(n){
+      resultado += n;
+    });
+    return resultado;
+  }
+
+  console.log(sumar(1,2,));
+  console.log(sumar(1,2,3,4));
+
+
+  // Operador Spread
+  const array1 = [1,2,3,4,5];
+  const array2 = [6,7,8,9,10];
+
+  console.log(array1, array2);
+
+  const array3 = [...array1, ...array2]; // me une los arreglos con los ... que es el operador spread
+  console.log(array3);
+
+
+    //----------------------//
+   //   *Arrow Functions*  // 
+  //----------------------//
+
+  const saludo4 = function(){
+    console.log("hola");
+  }
+  saludo4();
+
+  // arrow function
+  const saludo5 = () => {
+    console.log("hola");
+  }
+  saludo5();
+
+ const sumar3 = function(a,b){
+   return a + b;
+ }
+ const sumar2 = (a,b) => a + b;
+ console.log(sumar2(1,2));
+ console.log(sumar2(1,5));

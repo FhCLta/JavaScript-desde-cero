@@ -203,3 +203,117 @@ key: edad - value: 25
 Este texto debería proporcionar una descripción clara y completa del método `for...in` para tu archivo `.md`. ¡Avísame si necesitas algo más!
 
 
+
+  //--------------------------------------------------//
+ // *Diferencias entre `function` y `arrow function`*//
+//--------------------------------------------------//
+
+
+# Diferencias entre `function` y `arrow function` en JavaScript
+
+En JavaScript, existen dos formas principales de definir funciones: `function` y `arrow function`. A continuación se detallan las principales diferencias entre ellas:
+
+## 1. Sintaxis
+
+**Function Declaration (Function Keyword):**
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+```
+
+**Arrow Function:**
+```javascript
+const sum = (a, b) => a + b;
+```
+
+## 2. Contexto de `this`
+
+**Function Declaration:**
+El valor de `this` dentro de una función declarada depende del contexto en el que se llama. Puede cambiar en función de cómo se invoca la función (por ejemplo, como un método de un objeto).
+
+**Arrow Function:**
+Las arrow functions no tienen su propio `this`. En cambio, `this` se toma del contexto en el que se define la función (lexical `this`). Esto significa que el valor de `this` dentro de una arrow function es el mismo que en el entorno donde se creó la función.
+
+```javascript
+function Timer() {
+  this.seconds = 0;
+  setInterval(() => {
+    this.seconds++;
+    console.log(this.seconds); // `this` aquí se refiere a la instancia de Timer
+  }, 1000);
+}
+
+new Timer();
+```
+
+## 3. Objeto `arguments`
+
+**Function Declaration:**
+Las funciones tradicionales tienen un objeto `arguments` que contiene los argumentos pasados a la función.
+
+```javascript
+function sum() {
+  console.log(arguments); // Muestra todos los argumentos pasados
+}
+sum(1, 2, 3);
+```
+
+**Arrow Function:**
+Las arrow functions no tienen un objeto `arguments`. Si necesitas acceder a los argumentos en una arrow function, tendrías que usar un parámetro rest o referenciar la función envolvente.
+
+```javascript
+const sum = (...args) => {
+  console.log(args); // Usa el parámetro rest
+};
+sum(1, 2, 3);
+```
+
+## 4. Constructores
+
+**Function Declaration:**
+Las funciones declaradas pueden ser utilizadas como constructores para crear objetos nuevos usando `new`.
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+const person = new Person('John');
+```
+
+**Arrow Function:**
+Las arrow functions no pueden ser usadas como constructores y lanzarán un error si se intenta usar `new` con ellas.
+
+```javascript
+const Person = (name) => {
+  this.name = name;
+};
+
+// const person = new Person('John'); // Esto lanzará un error
+```
+
+## 5. Palabra clave `return`
+
+**Function Declaration:**
+Se debe usar la palabra clave `return` para devolver un valor.
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+**Arrow Function:**
+Si la función tiene una sola expresión, el `return` es implícito.
+
+```javascript
+const add = (a, b) => a + b; // `return` implícito
+```
+
+Estas diferencias pueden afectar cómo se comporta tu código dependiendo del uso que le des a las funciones y a las arrow functions.
+```
+
+
+
+
