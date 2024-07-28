@@ -417,4 +417,163 @@ console.log(Florencio.hasOwnProperty("contacto")); // me imprime true si el obje
   console.log((8===8) && ("8"===8) && ("8"===9)); // false
 
 
+    //---------------------//
+   //   *Condicionales*   // 
+  //---------------------//
 
+  /* if-else:  Se utiliza para manejar dos condiciones. 
+  Evaluas una condición con if, y si no se cumple, puedes
+   manejar el caso opuesto con else.*/   
+
+  let edad = 19;
+  
+  if (edad >= 18) {
+    console.log("Es mayor de edad");
+  } else {
+    console.log("Es menor de edad");
+  }
+
+/* if-else if-else : Se utiliza para manejar más de dos condiciones.
+ Comienzas con if para la primera condición, luego usas else if para 
+ cada condición adicional que quieras evaluar, y finalmente puedes usar 
+ else para manejar cualquier caso que no coincida con las condiciones anteriores.*/  
+/*
+
+/* Así, if-else es ideal para decisiones simples con dos posibles caminos,
+ mientras que if-else if-else es mejor para decisiones más complejas que 
+ involucran múltiples posibilidades. */
+
+ /*
+Déjame dormir - 0hrs - 5hrs
+Buenos dias 6hrs - 11hrs
+Buenas tardes 12hrs - 18hrs
+Buenas noches 19hrs - 23hrs
+*/
+
+  let hora = 19;  // si uso los operadores simples de comparacion tengo que modificar la hora
+
+  if (hora >= 0 && hora <= 5) {
+    console.log("Dejame dormir");
+  } else if (hora >= 6 && hora <= 11) { 
+    console.log("Buenos dias");
+  } else if (hora >= 12 && hora <= 18) {
+    console.log("Buenas tardes");
+  } else {
+    console.log("Buenas noches");
+  }
+
+  if(hora < 6) {
+    console.log("Dejame dormir");
+  }else if(hora > 5 && hora < 12){
+    console.log("Buenos dias");
+  }else if(hora > 11 && hora < 19){
+    console.log("Buenas tardes");
+  }else{
+    console.log("Buenas noches");
+  }
+
+/* Operadores Ternarios (condicion ? verdadero : falso)*/ // solo se puede usar en una sola linea de codigo
+console.log("Operadores Ternario");
+let eresMayor = (edad >= 18) 
+? "Es mayor de edad" 
+: "Es menor de edad";
+console.log(eresMayor);
+
+/* switch-case : Se utiliza para manejar multiples casos. */
+/*
+domoingo -0
+lunes -1
+martes -2
+miercoles -3
+jueves -4
+viernes -5
+sabado -6
+*/
+let dia = 10;
+switch (dia) {
+  case 0:
+    console.log("domingo");
+    break;
+  case 1:
+    console.log("lunes");
+    break;
+  case 2:
+    console.log("martes");
+    break;
+  case 3:
+    console.log("miercoles");
+    break;
+  case 4:
+    console.log("jueves");
+    break;
+  case 5:
+    console.log("viernes");
+    break;
+  case 6:
+    console.log("sabado");
+    break;
+  default:
+    console.log("No existe");
+    break;}
+
+    //-------------//
+   //   *Ciclos*  // 
+  //-------------//
+
+  // while: siempre va a comparar la condición y va a iterar hasta que se cumpla la condición
+
+  let contador = 0;
+  
+  /*
+  while (contador < 10) {
+    console.log("while", contador);
+    contador++; // es lo mismo que contador = contador + 1 me va a imprmir mientras que 0 sea menor a 10
+  }
+
+
+  // do while: se ejecuta una vez todo el codigo y luego se compara la condición
+  do{
+    console.log("do while",contador);
+    contador++;
+  }while(contador < 10);
+  */
+
+  
+  // for:
+
+  /* for (declaracion; inicializacion de la variable; condicion; incremento o decremento) {
+  se ejecuta el bloque de instrucciones
+  } */
+
+  for (let i = 0; i < 10; i++) {
+    console.log("for", i);
+  }
+
+  let numero = [10, 20, 30, 40, 50,60, 70, 80, 90, 100];
+
+  // i es el numero de posiciones
+  for (let i = 0; i < numero.length; i++) { // el i++ es para que el i recorra todas las posiciones hasta que se deje de cumplir la condición
+    console.log(numero[i]);  // lo que imprime es el valor de la posicion de i en el arreglo hasta que se deje de cuumplir la condición
+  }
+
+  // for in: es más para objetos primitivos
+  const persona2 = {
+    nombre: "Florencio",
+    apellido: "Hurtado",
+    edad: 25
+  }
+
+  for(const propiedad in persona2) {
+    console.log(`key: ${propiedad} - value: ${persona2[propiedad]}` );
+  }
+
+  // for of: es más para arreglos y objetos iterables
+
+  for(const elemento of numero) {
+    console.log(elemento);
+  }
+
+  let cadena = "hola";
+  for(const letra of cadena) { // recorre cada letra de la variable cadena
+    console.log(letra); // entonce me impirme cada letra
+  }

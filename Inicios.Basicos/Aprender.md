@@ -142,4 +142,64 @@ En resumen, la elección entre `const` y `let` depende de si necesitas que
 la referencia a la variable pueda cambiar o no.
 ```
 
+Claro, aquí tienes una explicación que puedes incluir en un archivo `.md`:
+
+---
+
+
+## Método `for...in` en JavaScript
+
+El bucle `for...in` en JavaScript se utiliza para iterar sobre las propiedades enumerables de un objeto. Es una manera eficiente de acceder a las claves y valores de un objeto sin necesidad de usar un índice.
+
+### Sintaxis
+
+```javascript
+for (const key in object) {
+  // Bloque de código
+}
+```
+
+### Parámetros
+
+- **`key`**: Es una variable que representa el nombre de cada propiedad del objeto durante cada iteración.
+- **`object`**: Es el objeto sobre el cual se está iterando.
+
+### Ejemplo de Uso
+
+```javascript
+const persona2 = {
+  nombre: "Florencio",
+  apellido: "Hurtado",
+  edad: 25
+}
+
+for (const propiedad in persona2) {
+  console.log(`key: ${propiedad} - value: ${persona2[propiedad]}`);
+}
+```
+
+### ¿Qué Hace el Código?
+
+1. **`for (const propiedad in persona2)`**: Inicia un bucle que recorre todas las propiedades del objeto `persona2`.
+2. **`console.log(...)`**: Dentro del bucle, `propiedad` toma el nombre de la propiedad actual (como `"nombre"`, `"apellido"`, y `"edad"`), y `persona2[propiedad]` es el valor correspondiente a esa propiedad.
+
+### Salida del Ejemplo
+
+El código anterior imprimirá:
+
+```
+key: nombre - value: Florencio
+key: apellido - value: Hurtado
+key: edad - value: 25
+```
+
+### Consideraciones
+
+- El `for...in` recorre tanto las propiedades propias del objeto como las heredadas a través de su cadena de prototipos. Para iterar solo sobre las propiedades propias del objeto, puedes usar `Object.hasOwnProperty()` para filtrar las propiedades heredadas.
+- No garantiza un orden específico en la iteración de las propiedades. Si necesitas un orden específico, puedes usar técnicas alternativas como `Object.keys()` junto con un bucle `for` clásico.
+
+---
+
+Este texto debería proporcionar una descripción clara y completa del método `for...in` para tu archivo `.md`. ¡Avísame si necesitas algo más!
+
 
