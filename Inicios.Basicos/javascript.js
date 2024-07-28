@@ -577,3 +577,76 @@ switch (dia) {
   for(const letra of cadena) { // recorre cada letra de la variable cadena
     console.log(letra); // entonce me impirme cada letra
   }
+
+    //------------------------//
+   //   *Manejo de errores*  // 
+  //------------------------//
+
+  // ejemplo sin error
+  try {
+    console.log("En el try se agrega el código a evaluar");
+  } catch (error) { // si no existe un error en el try no se ejecuta el catch y viceversa
+    console.log("catch captura cualquier error que se genere en el try");
+  } finally {
+    console.log("El finally se ejecutara siempre al final de un bloque try-catch");
+  }
+
+  // ejemplo con error
+  console.log("Ejemplo con error");
+  try {
+    console.log("En el try se agrega el código a evaluar");
+    noExiste; // cuando captura el error va directamente al catch
+    console.log("Esto no se va a ejecutar");
+  } catch (error) {
+    console.log("catch captura cualquier error que se genere en el try");
+    console.log(error);
+  } finally {
+    console.log("El finally se ejecutara siempre al final de un bloque try-catch");
+  }
+
+  // ejemplo con error personalizado
+  console.log("Ejemplo con error personalizado");
+  try {
+    let numero = "y";
+    
+    if(isNaN(numero)){                      
+      throw new Error("El caracter introducido no es un numero");  // isNan me dice si es un numero o no
+  }
+ 
+  console.log(numero * 10);
+} catch (error) {
+  console.log(`Se produjo el siguiente error: ${error}`);
+}
+
+    
+    //-------------------------//
+   //   *Break and Continue*  // 
+  //-------------------------//
+
+  // break: detiene la ejecucion del bucle 
+  console.log("break");
+
+  const numeros10 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (let i = 0; i < numeros10.length; i++) {
+    if (i === 5) {
+      break; // detiene la ejecucion del bucle for
+    }
+    console.log(numeros10[i]);
+  }
+
+  // continue: salta la iteracion del bucle
+  console.log("continue");
+
+  
+  for (let i = 0; i < numeros10.length; i++) {
+    if (i === 5) {
+      continue; //  salta la iteracion y continua la ejecucion del bucle for 
+    }
+    console.log(numeros10[i]);
+  }
+
+    
+    //-------------------------//
+   //   *Desestructuracion*   // 
+  //-------------------------//
+  
