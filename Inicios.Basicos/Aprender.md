@@ -142,11 +142,6 @@ En resumen, la elección entre `const` y `let` depende de si necesitas que
 la referencia a la variable pueda cambiar o no.
 ```
 
-Claro, aquí tienes una explicación que puedes incluir en un archivo `.md`:
-
----
-
-
 ## Método `for...in` en JavaScript
 
 El bucle `for...in` en JavaScript se utiliza para iterar sobre las propiedades enumerables de un objeto. Es una manera eficiente de acceder a las claves y valores de un objeto sin necesidad de usar un índice.
