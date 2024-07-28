@@ -204,9 +204,6 @@ Este texto debería proporcionar una descripción clara y completa del método `
 
 
 
-  //--------------------------------------------------//
- // *Diferencias entre `function` y `arrow function`*//
-//--------------------------------------------------//
 
 
 # Diferencias entre `function` y `arrow function` en JavaScript
