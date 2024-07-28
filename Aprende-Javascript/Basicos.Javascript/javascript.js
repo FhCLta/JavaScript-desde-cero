@@ -646,7 +646,75 @@ switch (dia) {
   }
 
     
-    //-------------------------//
-   //   *Desestructuracion*   // 
-  //-------------------------//
+    //-----------------------//
+   //   *Destructuracion*   // 
+  //-----------------------//
+
+ 
+  const Numeros1 = [1,2,3];
   
+   // sin usar la destructuracion
+  console.log("sin usar la destructuracion");
+  
+  let uno = Numeros1[0];
+  let dos = Numeros1[1];
+  let tres = Numeros1[2];
+
+  console.log(uno,dos,tres);
+
+  // usando la destructuracion
+  console.log("usando la destructuracion");
+
+  const [uno1,dos1,tres1] = Numeros1;
+  console.log(uno1,dos1,tres1);
+
+  // otra manera de usar la destructuracion
+  let persona5 = {
+    nombre3: "Florencio",
+    apellido3: "Hurtado",
+    edad3: 25
+  }
+
+  let{nombre3,apellido3,edad3} = persona5;
+  console.log(nombre3,apellido3,edad3);
+ 
+/* para que la destructuracion funcione en los objetos es muy importante que la varible
+  que trato de crear sea igual a la prpoiedad del objeto. */
+
+  
+    //-------------------------//
+   //   *Objetos Literales*   // 
+  //-------------------------//
+
+  let nombre4 = "Firulais",
+  raza = "Chihuahua",
+  edad1 = 3;
+
+  const perro = {
+    nombre4: nombre4,
+    raza: raza,
+    edad1: edad1,
+    ladrar: function(){
+      console.log("guau");
+    }
+
+  }
+  console.log(perro);
+  perro.ladrar();
+
+  const dog ={
+    nombre4,
+    raza,
+    edad1,
+    ladrar(){
+      console.log("guau");
+    }
+  }
+  
+  console.log(dog);
+  dog.ladrar();
+
+    
+    //------------------------------------------//
+   //   *Parametros Rest & Operador  spread*   // 
+  //------------------------------------------//
