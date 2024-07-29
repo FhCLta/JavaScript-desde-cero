@@ -200,7 +200,6 @@ key: edad - value: 25
 
 ---
 
-Este texto debería proporcionar una descripción clara y completa del método `for...in` para tu archivo `.md`. ¡Avísame si necesitas algo más!
 
 
 
