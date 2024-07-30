@@ -1,4 +1,4 @@
-Claro, aquí tienes una explicación básica de la programación orientada a objetos (POO) y los prototipos en formato Markdown:
+Aquí tienes una explicación básica de la programación orientada a objetos (POO) y los prototipos.
 
 ```markdown
 # Programación Orientada a Objetos y Prototipos
