@@ -83,13 +83,120 @@ Animal1.prototype.saludar = function(){
     console.log('Hola soy ' + this.nombre);
 }
 
+   //------------------------//
+  // *Herencia Prototipica* // // Esta fue la manera para ver cómo funciona javascript aunque trabajaremos con las clases
+ //------------------------//
+ function Perro(nombre,genero,tamanio){
+    this.super = Animal1;
+    this.super(nombre,genero);
+    this.tamanio = tamanio;
 
- const snoppy1 = new Animal1('snoppy','macho'),
+ }
+
+ // Perro está heredando de Animal1
+ Perro.prototype = new Animal1(); 
+ Perro.prototype.constructor = Perro; // perro puede utilizar los métodos heredados de animal1
+
+ // Sobreescritura de nétodos del Prototipo padre en el hijo
+ Perro.prototype.sonar = function(){
+    console.log("Soy un perro y mi sonido es ladrar");
+ }
+
+ Perro.prototype.ladrar = function(){
+    console.log("guau guau");
+ }
+
+ const snoppy1 = new Animal1('snoppy','macho');
+ const snoppy2 = new Perro('snoppy','macho','mediano'),
  lolaBunny1 = new Animal1('lolaBunny','hembra');
  
  console.log(snoppy1);
+ console.log(snoppy2);
  console.log(lolaBunny1);
  
  snoppy1.sonar();
+ snoppy2.sonar();
+ snoppy2.ladrar();
  lolaBunny1.saludar();
+
+   //--------------------//
+  // *Clase y herencia* //
+ //--------------------//
  
+  // las clases nos simplifican la excritura
+    class Animal5{
+        constructor(nombre,genero){
+        this.nombre = nombre;
+        this.genero = genero;
+    }
+        
+    // Metodos
+    sonar (){
+        console.log('Hago sonido porque estoy vivo ');
+    }
+    saludar(){
+        console.log('Hola soy ' + this.nombre);
+    }
+ }
+
+ // es para que gato me herede animal para eso se usa class y extends
+ //  con el metodo super() se manda a llamar el constructor de la clase padre
+   class Gato extends Animal5{
+    constructor(nombre,genero,tamaio){
+  
+    super(nombre,genero);
+    this.tamanio = this.tamanio;
+    this.raza = null;
+  }
+  sonar(){
+    console.log("Soy un gato y mauyo");
+  }
+  saludar(){
+    console.log('Hola soy misu');
+  }
+   
+  //un metodo estático se puede ejecutar sin necesida de instanciar una clase
+  static queEres(){
+    console.log('Los gatos tienen 7 vidas');
+  }
+     /* Los setters y getters son métodos especiales que nos permiten establecer 
+       y obtener valores de atributos de nuestra clase */
+    
+    get getRaza(){
+        return this.raza;
+    }   
+    set setRaza(raza){
+        this.raza = raza;
+    }
+ 
+ }
+
+ Gato.queEres();
+
+ const mimi = new Animal5('Mimi','Hembra'),
+       misu = new Gato('Misu','Macho','Grande')
+
+
+ console.log(mimi);
+ mimi.sonar();
+ mimi.saludar();
+
+ console.log(misu);
+ misu.sonar();
+ misu.saludar();
+ console.log(misu.getRaza); // hay que ejecutarlo como si fuera un atributo y no un metodo
+ misu.setRaza = "Siames";
+ console.log(misu.getRaza);
+
+
+  
+
+
+
+
+ 
+ 
+  
+
+
+
