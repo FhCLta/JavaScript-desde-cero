@@ -187,9 +187,56 @@ console.clear();
     
  let expReg = new RegExp("lorem","");
  let RegExp2 = /lorem/;
+ let RegExp3 = /lorem/ig;
  
  console.log(expReg.test(cadena)); // devuelve un boolean
  console.log(expReg.exec(cadena)); // devuevle un array
+ console.clear();
+
+    //------------------------------//
+   //   *Funciones anónimas*       //
+  //------------------------------// 
+
+   // funcion anónima Autoejecutable
+  // funcion anónima aquí siempre debemos usar ;
+ (function(){
+   console.log("Mi primer IIFe");
+   
+ })(); 
+ (function(d,w,c){
+    console.log("Mi segundo IIFe");
+    console.log(d);
+    console.log(w);
+    c.log('Esto es un console.log')
+    
+    
+  })(document,window,console);  // document está dentro de d, windows es w y console es C
+
+// Formas  de escribir las funciones anónimas autoejecutables
+// Clásica
+(function(){
+    console.log('Version Clasica');
+    
+})();
+
+// La crockford
+((function(){
+    console.log('Version crockford');
+    
+})());
+
+// Unaria
++function(){
+  console.log('Version Unaria');
+}();
+
+// Facebook
+!function(){
+    console.log('Version Facebook')
+}();
+
+    
+
  
  
  
