@@ -187,11 +187,34 @@ eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
 /*
 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
 */
+const aleatorio = () => console.info(Math.round(Math.random()*100+500));
+aleatorio();
+
+
 
 /*
 10) Programa una función que reciba un número y evalúe si es capicúa o no 
 (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
 */
+const capicua = (numero = 0) =>{
+    if(!numero) return console.warn("No ingresaste un número");
+
+    if (typeof numero !== "number") return console.error(`El valor ${numero} ingresado
+        no es un número`);
+  
+ numero = numero.toString();
+ let alRevesN = numero.split("").reverse().join("");
+ 
+ return(numero === alRevesN)
+ ? console.info(`Si es capicua , numero original ${numero}, numero al reves ${alRevesN}`)
+ : console.info(`No es capicua , numero original ${numero}, numero al reves ${alRevesN}`)
+        
+}
+capicua();
+capicua('191');
+capicua(190);
+capicua(2002);
+
 
 
 /*
@@ -199,3 +222,67 @@ eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
 (El factorial de un entero positivo n, se define como el producto de todos los números enteros
  positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
  */
+
+ const factorial = (numero = undefined) =>{
+    if(numero === undefined) return console.warn("No ingresate un numero");   
+     
+    if(typeof numero !== "number") return console.error(`El valor ${numero}
+       ingresado no es un numero `);
+
+    if(numero === 0) return console.error("El número no puede ser negativo");
+    
+    if(Math.sign(numero)=== -1)return console.error("El número no puede ser negativo");
+
+    let factorial = 1;
+
+    for (let i = numero; i > 1; i--){
+
+       factorial = factorial * i;
+    }
+
+    return console.info(`El factorial de ${numero} es ${factorial}`);
+}
+factorial();
+factorial("5");
+factorial(-5);
+factorial(5);
+
+
+
+/*
+12) Programa una función que determine si un número es primo
+(aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+*/
+
+
+
+
+/*
+13) Programa una función que determine si un número es par o impar,
+ pe. miFuncion(29) devolverá Impar.
+*/
+
+
+
+
+
+/*
+14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. 
+miFuncion(0,"C") devolverá 32°F.
+*/
+
+
+/*
+15) Programa una función para convertir números de base binaria a decimal y viceversa, 
+pe. miFuncion(100,2) devolverá 4 base 10.
+*/
+
+/*
+16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada,
+ pe. miFuncion(1000, 20) devolverá 800.
+ */
+
+ /*
+17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, 
+pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+*/

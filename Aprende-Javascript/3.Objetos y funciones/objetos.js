@@ -125,7 +125,7 @@ console.clear();
   console.log(Math.sign(-7.8));// siempre va a devolver si el # es negativo positivo o 0 indentidicandolo con -1 0 1
   console.log(Math.random()); // seimpre va a dar un # aleatorio entre 0 y 1
   console.log(Math.random() * 1000);
-  console.log(Math.round(Math.random() * 1000));
+  console.log(Math.round(Math.random() * 1000)); 
  console.clear();
  
     //--------------------------------//
