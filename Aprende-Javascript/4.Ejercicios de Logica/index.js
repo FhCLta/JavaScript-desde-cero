@@ -253,7 +253,39 @@ factorial(5);
 12) Programa una función que determine si un número es primo
 (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
 */
+ 
+const numeroPrimo = (numero1 = undefined) => {
+    if(numero1 === undefined) return console.warn("No ingresate un numero");   
+     
+    if(typeof numero1 !== "number") return console.error(`El valor ${numero1}
+       ingresado no es un numero `);
 
+    if(numero1 === 0) return console.error("El número no puede ser 0");
+
+    if(numero1 === 1) return console.error("El número no puede ser 1");
+    
+    if(Math.sign(numero1)=== -1)return console.error("El número no puede ser negativo");
+
+    let divisible = false;
+
+    for(let i = 2; i < numero1; i++){
+       
+        if((numero1 % i) === 0){
+          divisible = true;  
+          break;
+        }
+         
+    }
+    return(divisible)
+    ?console.log(`El numero ${numero1}, No es primo`)
+    : console.log(`El numero ${numero1}, Si es primo `);
+}
+numeroPrimo();
+numeroPrimo("5");
+numeroPrimo(0);
+numeroPrimo(-1);
+numeroPrimo(1);
+numeroPrimo(5);
 
 
 
@@ -261,8 +293,21 @@ factorial(5);
 13) Programa una función que determine si un número es par o impar,
  pe. miFuncion(29) devolverá Impar.
 */
+const numeroParImpar = (numero = undefined)=>{
+    if(numero === undefined) return console.warn("No ingresate un numero");   
+     
+    if(typeof numero !== "number") return console.error(`El valor ${numero}
+       ingresado no es un numero `);
+   
+    return((numero%2)===0)
+    ?console.info(`El numero ${numero} es Par`)
+    :console.info(`El numero ${numero} es Impar`) 
+}
 
-
+numeroParImpar();
+numeroParImpar("5");
+numeroParImpar(5);
+numeroParImpar(6);
 
 
 
@@ -270,6 +315,33 @@ factorial(5);
 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. 
 miFuncion(0,"C") devolverá 32°F.
 */
+const convertirGrados = (grados = undefined, unidad = undefined)=>{
+    if(grados === undefined) return console.warn("No ingresaste grados a convertir");
+
+    if(typeof grados !== "number") return console.error(`El valor ${grados} ingresado, no es un numero`);
+
+    if(unidad === undefined) return console.warn("No ingresaste el tipo de grado a convertir")
+
+    if(typeof unidad !== "string") return console.error(`El valor ${unidad} ingresado, No es una cadena de texto`)
+        
+    if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn('Valor de unidad no reconocido'); 
+    
+    if(unidad === "C"){
+        return console.info(`${grados}°C=${Math.round((grados*(9/5)+32))}°F`);
+    }else if(unidad === "F"){
+        return console.info(`${grados}°C=${Math.round(((grados-32)*(5/9)))}°C`);
+    }
+    console.info("funciona");
+}
+
+convertirGrados();
+convertirGrados("2");
+convertirGrados(2);
+convertirGrados(2,true);
+convertirGrados(2,"Hola");
+convertirGrados(2,"E");
+convertirGrados(0,"C");
+convertirGrados(100,"F");
 
 
 /*
@@ -286,3 +358,25 @@ pe. miFuncion(100,2) devolverá 4 base 10.
 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, 
 pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
 */
+
+/*
+18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, 
+pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+*/
+
+
+
+
+/*
+19) Programa una función que valide que un texto sea un nombre válido,
+ pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+ */
+
+
+
+
+ 
+ /*
+20) Programa una función que valide que un texto sea un email válido,
+ pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+ */
