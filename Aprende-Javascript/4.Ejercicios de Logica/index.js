@@ -476,7 +476,30 @@ calcularAnios(new Date(2100,9,24));
 pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
 */
 
+const contarLetras = (cadena = "") =>{
+    if(!cadena) return console.warn('No ingresaste la cadena de texto');
 
+    if(typeof cadena !== "string") return console.error(`El valor ${cadena} ingresado, no es una cadena`)
+
+    let vocales = 0;
+    let consonantes = 0;
+    let vocalesList = 'aeiouáéíóúAEIOUÁÉÍÓÚ';
+    
+    for (let i = 0; i < cadena.length; i++) {
+        let caracter = cadena[i];
+        if (vocalesList.includes(caracter)) {
+            vocales++;
+        } else if (caracter.toLowerCase() !== caracter.toUpperCase()) {
+            consonantes++;
+        }
+    }
+    
+    return console.info(`Vocales: ${vocales}, Consonantes: ${consonantes}`);
+}
+
+contarLetras();
+contarLetras(3);
+contarLetras('Hola mundo');
 
 
 /*
@@ -484,6 +507,22 @@ pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
  pe. miFuncion("Jonathan MirCha") devolverá verdadero.
  */
 
+ const validarNombre = (nombre = "")=>{
+    if(!nombre) return console.warn("No ingresaste un nombre");
+
+    if(typeof nombre !== "string") return console.error(`El valor ${nombre} ingresado , no es cadena de texto`)
+
+    let expReg  = /^[A-Za-zÑñáÁÉéÍíÓóÚú\s]+$/g.test(nombre);   
+
+   return(expReg)
+   ?console.info(`${nombre}, es un nombre válido`)
+   :console.warn(`${nombre} no es un nombre válido`)
+ }
+
+ validarNombre();
+ validarNombre(3);
+ validarNombre("Florencio");
+ validarNombre("Florencio , 28");
 
 
 
@@ -491,4 +530,62 @@ pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
  /*
 20) Programa una función que valide que un texto sea un email válido,
  pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
- */
+*/
+
+
+const validarCorreo = (correo= "")=>{
+    if(!correo) return console.warn("No ingresaste un correo");
+
+    if(typeof correo !== "string") return console.error(`El valor ${correo} ingresado , no es cadena de texto`)
+
+    let expReg  = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/i.test(correo);   
+
+   return(expReg)
+   ?console.info(`${correo}, es un correo válido`)
+   :console.warn(`${correo} no es un correo válido`)
+ }
+
+ validarCorreo();
+ validarCorreo(3);
+ validarCorreo("fyhwin2000@gmail.com");
+ validarCorreo("Florencio , 28");
+
+ /* Fusion 19 y 20 */
+
+ const validarPatron = (cadena = "" , patron = "")=>{
+    if(!cadena)return console.warn("No ingresaste una cadena de texto a evaluar");
+
+    if(typeof cadena !== "string") return console.error(`EL valor ${cadena} ingresado, no es una cadena de texto`)
+
+    if(patron === undefined)return console.warn("No ingresaste el patron de texto a evaluar");   
+    
+    if( !(patron instanceof RegExp)) return console.error(`EL valor ${patron} ingresado, no es una expresion regular`)
+
+    let expReg = patron.test(cadena);
+    
+    return(expReg)
+    ?console.info(`${cadena}, cumple con el patrón ingresado`)
+    :console.warn(`${cadena}, no cumple con el patrón`)
+ }
+
+ validarPatron("Florencio")
+ validarPatron("Florencio", /^[A-Za-zÑñáÁÉéÍíÓóÚú\s]+$/g );
+ validarPatron("fyhwin2000@gmail.com",/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/i )
+
+
+/*
+21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, 
+pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+/*
+
+/*
+22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, 
+pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+/*
+
+
+/*
+23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos 
+en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) 
+devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+*/
