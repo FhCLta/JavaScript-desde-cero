@@ -573,15 +573,65 @@ const validarCorreo = (correo= "")=>{
  validarPatron("fyhwin2000@gmail.com",/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,15}$/i )
 
 
+
+
+
+
+
 /*
 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, 
 pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
-/*
+*/
+
+const devolverCuadrados = (arr = undefined) =>{
+    if(arr === undefined) return console.warn("No ingresaste un arregloe de números");
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+    if(arr.length === 0) return console.error("EL arreglo está vacio");
+
+    for(let num of arr){
+        if(typeof num !== "number") return console.error(`El valor ${num} ingresado no es un #`)
+    }
+
+    const newArr = arr.map(el => el*el)
+    return console.info(`Arreglo original ${arr} .\n Arreglo elevador al cuadrado: ${newArr}`)
+}
+
+devolverCuadrados();
+devolverCuadrados(true);
+devolverCuadrados({});
+devolverCuadrados([1,4,5]);
+
 
 /*
 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, 
 pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
-/*
+*/
+
+const arrayMinMax = (arr = undefined) =>{
+    if(arr === undefined) return console.warn("No ingresaste un arreglo de números");
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+    if(arr.length === 0) return console.error("El arreglo está vacío");
+
+    for(let num of arr){
+        if(typeof num !== "number") return console.error(`El ${num} ingresado no es numero`);
+    }
+
+    return console.info(`Arreglo original ${arr}\nValor mayor: ${Math.max(...arr)} \nVAlor menor
+    ${Math.min(...arr)}`);
+
+    // el \n es para la saltar la linea de código
+}
+
+ arrayMinMax();
+ arrayMinMax(false);
+ arrayMinMax(1, 4, 5, 99, -60);
+ arrayMinMax([1, 4, 5, 99, -60]);
+ 
+
 
 
 /*
@@ -589,3 +639,100 @@ pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
 en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) 
 devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
 */
+
+const separarParesImpares = (arr = undefined)=>{
+    if(arr === undefined) return console.warn("No ingresaste un arreglo de números");
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo");
+
+    if(arr.length === 0) return console.error("El arreglo está vacío");
+
+    for(let num of arr){
+        if(typeof num !== "number") return console.error(`El ${num} ingresado no es numero`);
+    }
+    
+    return console.info({
+        pares: arr.filter(num => num% 2 === 0), // divide el # entre 2 si el residuo es 0 el # es par
+        impares: arr.filter(num => num% 2 === 1) // divide el # entre 2 si el residuo es 1 el # es impar
+    
+    })
+}
+
+separarParesImpares();
+separarParesImpares("hola");
+separarParesImpares([1,2,3,4,5,6,7,8,9,0]);
+
+
+
+
+
+
+
+/*
+24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, 
+el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente,
+ pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+*/
+
+const ordenarArreglo = (arr = undefined)=>{
+
+    if(arr === undefined) return console.warn("No ingresaste un arreglo de numeros")
+
+    if(!(arr instanceof Array)) return console.error("El arreglo está vacío");
+    
+    if(arr.length === 0) return console.error("EL arreglo está vacío");
+
+    for(let num of arr){
+        if(typeof num !== "number") return console.error(`El valor ${num} ingresado, no es un número`);
+    }
+
+    return console.info({
+        arr,
+        asc: arr.map(el =>el).sort(),
+        desc: arr.map(el =>el).sort().reverse()
+    });
+}
+
+ordenarArreglo();
+ordenarArreglo("Hola");
+ordenarArreglo([7,5,7,8,6])
+
+
+
+/*
+25) Programa una función que dado un arreglo de elementos,
+elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true])
+ devolverá ["x", 10, 2, "10", true].
+ */
+
+
+
+
+
+ /*
+26) Programa una función que dado un arreglo de números obtenga el promedio, 
+pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+*/
+
+/*
+27) Programa una clase llamada Pelicula.
+
+La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+  - Todos los datos del objeto son obligatorios.
+  - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+     7 restantes números.
+  - Valida que el título no rebase los 100 caracteres.
+  - Valida que el director no rebase los 50 caracteres.
+  - Valida que el año de estreno sea un número entero de 4 dígitos.
+  - Valida que el país o paises sea introducidos en forma de arreglo.
+  - Valida que los géneros sean introducidos en forma de arreglo.
+  - Valida que los géneros introducidos esten dentro de los géneros 
+     aceptados*.
+  - Crea un método estático que devuelva los géneros aceptados*.
+  - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+    decimal de una posición.
+  - Crea un método que devuelva toda la ficha técnica de la película.
+  - Apartir de un arreglo con la información de 3 películas genera 3 
+    instancias de la clase de forma automatizada e imprime la ficha técnica 
+    de cada película.
+    */
